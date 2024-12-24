@@ -1,0 +1,13 @@
+{
+  "AppSyncApiName": "crudusermanagement",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-12-22T16:24:44.674Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authcrudusermanagementdccd5bc6",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "authorizationType": "AMAZON_COGNITO_USER_POOLS"
+}
