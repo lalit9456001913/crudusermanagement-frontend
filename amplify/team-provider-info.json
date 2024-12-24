@@ -12,17 +12,14 @@
       "AmplifyAppId": "d17v5h0uox4edr"
     },
     "categories": {
+      "auth": {
+        "crudusermanagementdccd5bc6": {}
+      },
       "function": {
         "UserFunctions": {
           "deploymentBucketName": "amplify-crudusermanagement-dev-e2c1a-deployment",
           "s3Key": "amplify-builds/UserFunctions-436259494a4b61696f47-build.zip"
         }
-      },
-      "api": {
-        "crudusermanagement": {}
-      },
-      "auth": {
-        "crudusermanagementdccd5bc6": {}
       }
     }
   }
