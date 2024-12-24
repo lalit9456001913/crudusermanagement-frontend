@@ -15,108 +15,73 @@
   "api": {
     "crudusermanagement": {
       "service": "AppSync",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "auth",
-          "resourceName": "crudusermanagementdccd5bc6",
           "attributes": [
             "UserPoolId"
-          ]
+          ],
+          "category": "auth",
+          "resourceName": "crudusermanagementdccd5bc6"
         }
       ],
       "output": {
         "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2024-12-29T16:10:30.720Z",
+                "apiKeyExpirationDays": 7,
+                "description": ""
+              },
+              "authenticationType": "API_KEY"
+            }
+          ],
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
               "userPoolId": "authcrudusermanagementdccd5bc6"
             }
-          },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "API_KEY",
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 7,
-                "apiKeyExpirationDate": "2024-12-29T16:10:30.720Z",
-                "description": ""
-              }
-            }
-          ]
+          }
         },
         "GraphQLAPIIdOutput": "hgopiekkrvavnagn4qbwxreefi",
-        "GraphQLAPIEndpointOutput": "https://yapyajttxbbsplvnlc5gkq3qtm.appsync-api.ap-south-1.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-q7jla7p3kjeuro4qfvcp3enecy"
+        "GraphQLAPIEndpointOutput": "http://127.0.0.1:20002/graphql",
+        "GraphQLAPIKeyOutput": "da2-fakeApiId123456"
       },
-      "lastPushTimeStamp": "2024-12-24T09:00:53.708Z",
+      "providerPlugin": "awscloudformation",
+      "lastPushTimeStamp": "2024-12-24T09:17:55.259Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-crudusermanagement-dev-e2c1a-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apicrudusermanagement"
       },
-      "lastPushDirHash": "tPic01l2tvno/4gVj+kMww53tm8=",
       "testMode": true
-    }
-  },
-  "function": {
-    "UserFunctions": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "lastBuildTimeStamp": "2024-12-22T17:06:08.994Z",
-      "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-12-22T17:06:11.666Z",
-      "distZipFilename": "UserFunctions-436259494a4b61696f47-build.zip",
-      "s3Bucket": {
-        "deploymentBucketName": "amplify-crudusermanagement-dev-e2c1a-deployment",
-        "s3Key": "amplify-builds/UserFunctions-436259494a4b61696f47-build.zip"
-      },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-crudusermanagement-dev-e2c1a-deployment/amplify-cfn-templates/function/UserFunctions-cloudformation-template.json",
-        "logicalId": "functionUserFunctions"
-      },
-      "lastPushTimeStamp": "2024-12-24T09:00:53.714Z",
-      "output": {
-        "LambdaExecutionRoleArn": "arn:aws:iam::131132981403:role/crudusermanagementLambdaRole977ac874-dev",
-        "Region": "ap-south-1",
-        "Arn": "arn:aws:lambda:ap-south-1:131132981403:function:UserFunctions-dev",
-        "Name": "UserFunctions-dev",
-        "LambdaExecutionRole": "crudusermanagementLambdaRole977ac874-dev"
-      },
-      "lastPushDirHash": "b/v1ZB4caSgOy90VlInlX+S9joI=",
-      "lastDevBuildTimeStamp": "2024-12-22T16:58:13.517Z"
     }
   },
   "auth": {
     "crudusermanagementdccd5bc6": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
       "customAuth": false,
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "signupAttributes": [
-          "EMAIL"
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
         ],
         "verificationMechanisms": [
           "EMAIL"
         ]
       },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-crudusermanagement-dev-e2c1a-deployment/amplify-cfn-templates/auth/crudusermanagementdccd5bc6-cloudformation-template.json",
-        "logicalId": "authcrudusermanagementdccd5bc6"
-      },
-      "lastPushTimeStamp": "2024-12-24T09:00:53.715Z",
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
       "output": {
         "UserPoolId": "ap-south-1_vx7PFeNnh",
         "AppClientIDWeb": "42lvdb2de9lolj5gis46qb5uhg",
@@ -126,7 +91,34 @@
         "IdentityPoolName": "crudusermanagementdccd5bc6_identitypool_dccd5bc6__dev",
         "UserPoolName": "crudusermanagementdccd5bc6_userpool_dccd5bc6"
       },
-      "lastPushDirHash": "dRNxKHMyfqqJBR7uiuvR28Un4V8="
+      "lastPushTimeStamp": "2024-12-24T09:16:21.897Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-crudusermanagement-dev-e2c1a-deployment/amplify-cfn-templates/auth/crudusermanagementdccd5bc6-cloudformation-template.json",
+        "logicalId": "authcrudusermanagementdccd5bc6"
+      }
+    }
+  },
+  "function": {
+    "UserFunctions": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::131132981403:role/crudusermanagementLambdaRole977ac874-dev",
+        "Region": "ap-south-1",
+        "Arn": "arn:aws:lambda:ap-south-1:131132981403:function:UserFunctions-dev",
+        "Name": "UserFunctions-dev",
+        "LambdaExecutionRole": "crudusermanagementLambdaRole977ac874-dev"
+      },
+      "lastPushTimeStamp": "2024-12-24T09:16:21.898Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-crudusermanagement-dev-e2c1a-deployment/amplify-cfn-templates/function/UserFunctions-cloudformation-template.json",
+        "logicalId": "functionUserFunctions"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-crudusermanagement-dev-e2c1a-deployment",
+        "s3Key": "amplify-builds/UserFunctions-436259494a4b61696f47-build.zip"
+      }
     }
   }
 }
